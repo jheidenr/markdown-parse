@@ -1,4 +1,8 @@
 // File reading code from https://howtodoinjava.com/java/io/java-read-file-to-string-examples/
+/**
+ * java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore MarkdownParseTest
+ * javac -cp ".;lib\junit-4.13.2.jar;lib\hamcrest-core-1.3.jar" MarkdownParseTest.java
+ */
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -65,9 +69,7 @@ public class MarkdownParse {
                     break;  
                 } 
             }
-
             
-
             if (check == false && (nextCloseBracket != nextOpenBracket + 1) && (nextCloseBracket == openParen - 1)) {
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
