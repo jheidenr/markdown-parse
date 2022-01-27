@@ -56,7 +56,7 @@ public class MarkdownParse {
             openParen = markdown.indexOf("(", nextCloseBracket);
             closeParen = markdown.indexOf(")", openParen);
             if (nextOpenBracket == -1 || nextCloseBracket == -1 || openParen == -1 || closeParen == -1) break;
-            
+
             //run for loop and .contains on the substring?
             boolean check = false;
             for ( String s : imageExtensions ){
@@ -66,7 +66,9 @@ public class MarkdownParse {
                 } 
             }
 
-            if (check == false) {
+            
+
+            if (check == false && (nextCloseBracket != nextOpenBracket + 1) && (nextCloseBracket == openParen - 1)) {
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
             currentIndex = closeParen + 1;
