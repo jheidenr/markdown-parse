@@ -46,6 +46,7 @@ public class MarkdownParse {
         */  
         
         String[] imageExtensions = { ".jpg", ".png", ".jpeg", ".raw", ".jfif", ".pjpeg", ".pjp", ".avif", ".gif", ".svg", ".webp" };
+        String[] validExtensions = {".com", ".html", ".edu", ".gov"};
 
         int currentIndex = 0;
         int nextOpenBracket = 0;
@@ -63,13 +64,19 @@ public class MarkdownParse {
 
             //run for loop and .contains on the substring?
             boolean check = false;
-            for ( String s : imageExtensions ){
+            for ( String s : imageExtensions){
                 if (markdown.substring(openParen+1, closeParen).contains(s)){
                     check = true;
                     break;  
                 }
             }
-            
+            /**
+            for (String s : validExtensions) {
+                    if (markdown.substring(openParen+1, closeParen).contains(s)) {
+                        toReturn.add(markdown.substring(openParen + 1, closeParen));
+                    }
+                }
+            */    
             if (check == false && (nextCloseBracket != nextOpenBracket + 1) && (nextCloseBracket == openParen - 1)) {
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
