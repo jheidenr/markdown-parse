@@ -70,15 +70,13 @@ public class MarkdownParse {
                     break;  
                 }
             }
-            /**
-            for (String s : validExtensions) {
+               
+            if (check == false && (nextCloseBracket != nextOpenBracket + 1) && (nextCloseBracket == openParen - 1)) {
+                for (String s : validExtensions) {
                     if (markdown.substring(openParen+1, closeParen).contains(s)) {
                         toReturn.add(markdown.substring(openParen + 1, closeParen));
                     }
                 }
-            */    
-            if (check == false && (nextCloseBracket != nextOpenBracket + 1) && (nextCloseBracket == openParen - 1)) {
-                toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
             currentIndex = closeParen + 1;
         }
