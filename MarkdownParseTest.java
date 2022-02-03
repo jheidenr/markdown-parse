@@ -112,4 +112,8 @@ public class MarkdownParseTest {
 
         assertEquals(this.strList, List.of());
     }
+    @Test
+    public void testFail() {
+        assertEquals(1,2);
+    }
 }

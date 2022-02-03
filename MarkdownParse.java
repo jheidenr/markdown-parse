@@ -67,7 +67,7 @@ public class MarkdownParse {
                 if (markdown.substring(openParen+1, closeParen).contains(s)){
                     check = true;
                     break;  
-                } 
+                }
             }
             
             if (check == false && (nextCloseBracket != nextOpenBracket + 1) && (nextCloseBracket == openParen - 1)) {
