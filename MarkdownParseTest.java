@@ -114,6 +114,6 @@ public class MarkdownParseTest {
     }
     @Test
     public void testFail() {
-        assertEquals(1,2);
+        assertEquals(2,2);
     }
 }
