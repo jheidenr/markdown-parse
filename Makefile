@@ -5,4 +5,4 @@ MarkdownParseTest.class: MarkdownParseTest.java MarkdownParse.class
 	javac -cp lib/*:. MarkdownParseTest.java MarkdownParse.java
 
 MarkdownParse.class: MarkdownParse.java
-	javac Markdownparse.java
+	javac MarkdownParse.java
