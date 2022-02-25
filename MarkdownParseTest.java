@@ -134,4 +134,31 @@ public class MarkdownParseTest {
 
         assertEquals(List.of(), this.strList);
     }
+    @Test
+    public void testReport1() throws IOException{
+        Path fileName = Path.of("report-test1.md");
+	    String contents = Files.readString(fileName);
+        strList = MarkdownParse.getLinks(contents);
+        System.out.println(strList);
+
+        assertEquals(List.of("`google.com", "google.com", "ucsd.edu"), this.strList);
+    }
+    @Test
+    public void testReport2() throws IOException{
+        Path fileName = Path.of("report-test2.md");
+	    String contents = Files.readString(fileName);
+        strList = MarkdownParse.getLinks(contents);
+        System.out.println(strList);
+
+        assertEquals(List.of("a.com", "a.com(())", "example.com"), this.strList);
+    }
+    @Test
+    public void testReport3() throws IOException{
+        Path fileName = Path.of("report-test2.md");
+	    String contents = Files.readString(fileName);
+        strList = MarkdownParse.getLinks(contents);
+        System.out.println(strList);
+
+        assertEquals(List.of("https://ucsd-cse15l-w22.github.io/"), this.strList);
+    }
 }
